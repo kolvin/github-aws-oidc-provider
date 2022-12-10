@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/kolvin/github-aws-oidc-provider/compare/v1.0.0...v1.1.0) (2022-12-10)
+
+
+### Features
+
+* update deployment_target config to roll out to OU accounts in PARALLEL vs SEQUENTIAL ([ee2d38e](https://github.com/kolvin/github-aws-oidc-provider/commit/ee2d38ece8103da024486d31da1bf661caad03a8))
+
 # 1.0.0 (2022-12-10)
 
 

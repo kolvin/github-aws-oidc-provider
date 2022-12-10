@@ -1,0 +1,45 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  OIDCProvider:
+    Type: AWS::IAM::OIDCProvider
+    Properties:
+      ClientIdList:
+        - "https://github.com"
+      ThumbprintList:
+        %{~ for thumbprint in thumbprints ~}
+        - "${thumbprint}"
+        %{~ endfor ~}
+      Url: "https://github.com"
+      Tags:
+        - Key: created_by
+          Value: cloudformation
+  CIRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: github-ci
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Federated: !Ref OIDCProvider
+            Action:
+              - "sts:AssumeRoleWithWebIdentity"
+            Condition:
+              StringLike:
+                "token.actions.githubusercontent.com:sub":
+                  %{~ for project_ref in trusted_projects_refs ~}
+                  - "${project_ref}"
+                  %{~ endfor ~}
+              StringEquals:
+                "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
+      Description: CI/CD role used to manage resources in AWS
+      MaxSessionDuration: 3600
+      ManagedPolicyArns:
+        %{~ for arn in managed_policy_arns ~}
+        - "${arn}"
+        %{~ endfor ~}
+      Tags:
+        - Key: created_by
+          Value: cloudformation

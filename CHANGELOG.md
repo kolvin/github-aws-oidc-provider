@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/kolvin/github-aws-oidc-provider/compare/v1.1.0...v1.1.1) (2022-12-10)
+
+
+### Bug Fixes
+
+* bad stack set instance config ([c4102ec](https://github.com/kolvin/github-aws-oidc-provider/commit/c4102ecbbaba483c04877abcd088e441ad1a573e))
+
 # [1.1.0](https://github.com/kolvin/github-aws-oidc-provider/compare/v1.0.0...v1.1.0) (2022-12-10)
 
 

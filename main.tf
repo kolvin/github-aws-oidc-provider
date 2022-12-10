@@ -27,6 +27,7 @@ resource "aws_cloudformation_stack_set_instance" "github_aws_oidc_provider" {
 
   deployment_targets {
     organizational_unit_ids = [for ou in var.github_aws_oidc_provider.enabled_org_units : local.all_org_units[ou].id]
+    region_concurrency_type = "PARALLEL"
   }
 
   region         = var.region

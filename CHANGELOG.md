@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/kolvin/github-aws-oidc-provider/compare/v1.1.2...v1.1.3) (2022-12-11)
+
+
+### Bug Fixes
+
+* resolve bad github values for OIDC in template ([ba490f8](https://github.com/kolvin/github-aws-oidc-provider/commit/ba490f825aa75b48640c0311c1545b0a5c57afd6))
+
 ## [1.1.2](https://github.com/kolvin/github-aws-oidc-provider/compare/v1.1.1...v1.1.2) (2022-12-11)
 
 

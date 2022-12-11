@@ -5,12 +5,12 @@ Resources:
     Type: AWS::IAM::OIDCProvider
     Properties:
       ClientIdList:
-        - "https://github.com"
+        - "sts.amazonaws.com"
       ThumbprintList:
         %{~ for thumbprint in thumbprints ~}
         - "${thumbprint}"
         %{~ endfor ~}
-      Url: "https://github.com"
+      Url: "https://token.actions.githubusercontent.com"
       Tags:
         - Key: created_by
           Value: cloudformation

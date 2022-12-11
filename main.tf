@@ -29,10 +29,6 @@ resource "aws_cloudformation_stack_set_instance" "github_aws_oidc_provider" {
     organizational_unit_ids = [for ou in var.github_aws_oidc_provider.enabled_org_units : local.all_org_units[ou].id]
   }
 
-  operation_preferences {
-    region_concurrency_type = "PARALLEL"
-  }
-
   region         = var.region
   stack_set_name = aws_cloudformation_stack_set.github_aws_oidc_provider["this"].name
 }

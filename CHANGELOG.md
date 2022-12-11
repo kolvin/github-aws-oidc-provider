@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/kolvin/github-aws-oidc-provider/compare/v1.1.1...v1.1.2) (2022-12-11)
+
+
+### Bug Fixes
+
+* **terragrunt, ci:** undo addition deployment operation, breaks AWS provider and not required ATM ([4b76b39](https://github.com/kolvin/github-aws-oidc-provider/commit/4b76b39f0b20238012442303779e44cc825677aa))
+
 ## [1.1.1](https://github.com/kolvin/github-aws-oidc-provider/compare/v1.1.0...v1.1.1) (2022-12-10)
 
 
